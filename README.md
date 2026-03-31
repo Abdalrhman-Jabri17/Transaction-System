@@ -120,20 +120,3 @@ To mimic real-world cashing and ensure system integrity, seed the system with an
 5. Use this fund origin to seed user payouts and cashing flows in tests.
 
 This provides a stable starting balance, allows traceability in ledger history, and simulates production cash-run behavior.
-
-## �🛡️ Production notes
-
-- Enforce HTTPS
-- Enable strong JWT expiration + refresh tokens
-- Add input validation middleware
-- Add rate limit and CORS rules
-- Add logging and monitoring
-- Secure `.env` and use secrets manager for cloud deploy
-
-## 🧪 Testing
-
-Add automated tests with Jest + Supertest in future updates.
-
-## 📄 License
-
-MIT (or choose your license)
