@@ -82,6 +82,21 @@ Transactions
 
 > Use header: `Authorization: Bearer <token>` for protected resources.
 
+## ✉️ Email service notifications
+
+`src/services/email.service.js` is designed for registering automatic notifications in these flows:
+
+- Account creation/registation: send welcome email.
+- Transaction completion: send on-chain (ledger) confirmation to sender and receiver.
+
+Example hooks:
+
+- `auth.controller.js` (after signup): `emailService.sendRegistrationEmail(user)`
+- `transaction.controller.js` (after successful post):
+  `emailService.sendTransactionConfirmation(transaction, user)`
+
+This improves trust and auditability in real-world wallets and cashing platforms.
+
 ## 🧩 Suggested workflow
 
 1. Register user
@@ -90,7 +105,7 @@ Transactions
 4. Add transactions
 5. Observe ledger entries and balances
 
-## � Initial funding (system user)
+## 💵 Initial funding (system user)
 
 To mimic real-world cashing and ensure system integrity, seed the system with an initial `system` user and funding entry:
 
